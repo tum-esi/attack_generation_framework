@@ -1,0 +1,11 @@
+
+// scenario configuration example structure
+// configs contains only activated containers
+{
+	"_id": "ObjectIdentifier",
+	"ref": "scenario_identifier",
+	"configurations": [{
+		"container_info": {"short_id": "12313", "name": "rec", "ports": "8010/tcp,"},
+		"configs": {"delay": "0", "duration": "0", "interval": "1000", "jitter": "0", "target": ""}
+	}]
+}

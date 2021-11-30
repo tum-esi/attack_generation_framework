@@ -1,0 +1,5 @@
+{
+	"servicename": "sender",
+	"http_port": 8010,
+	"http_address": "0.0.0.0"
+}

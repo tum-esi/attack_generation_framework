@@ -1,0 +1,10 @@
+tornado>=6.1
+requests>=2.24.0
+docker>=5.0.0
+pymongo>=3.11.3
+tornado-swagger>=1.2.9
+scapy>=2.4.5
+pyshark>=0.4.3 
+sklearn>=0.24.1
+opencv-python>=4.5.3.56
+numpy>=1.18.4

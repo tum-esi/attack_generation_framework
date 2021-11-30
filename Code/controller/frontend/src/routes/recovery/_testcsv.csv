@@ -1,0 +1,4 @@
+mission,process_number,process1,status,error,parameter
+busstop1,23,light,ready,no,five
+busstop2,34,camera,running,no,angle
+bellesite,11,speedometer,running,no,value

@@ -1,0 +1,4 @@
+tornado>=6.0.4
+requests>=2.24.0
+pyvim>=3.0.2
+scapy>=2.4.5

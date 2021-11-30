@@ -1,0 +1,5 @@
+{
+	"servicename": "attacker",
+	"http_port": 8011,
+	"http_address": "0.0.0.0"
+}

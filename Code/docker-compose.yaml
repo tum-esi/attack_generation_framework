@@ -1,0 +1,77 @@
+version: "3.4"
+
+# networks:
+  # testnet:
+
+# use network host for local testing of python tools
+
+services:
+
+  controller:
+    build:
+      context: .
+    command: python3 /controller/main.py
+    container_name: controller
+    depends_on:
+      - "mongodb"
+    ports:
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./controller:/controller
+      - ./repositories:/repositories
+      - ./tars:/tars
+    networks:
+      - testnet
+
+  # sudo rm -rf mongodb/mongod.lock
+  # sudo chown -R mongodb:mongodb ./mongodb
+  # add .dockerignore with content "mongodb/"
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    # image: bitnami/mongodb:latest
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - "./mongodb:/data/db"
+    network_mode: host
+    # networks:
+    #   - testnet
+
+  simbridge:
+    container_name: simbridge
+    command: "python3 sengen --ip carla --carla-path /carla/PythonAPI/carla/dist/carla-0.9.11-py3.8-linux-x86_64.egg"
+    build:
+      context: ./sengen
+    restart: always
+    ports:
+      - 8300:8300
+    depends_on:
+      - "carla"
+    networks:
+      - testnet
+
+  carla:
+    container_name: carla
+    image: carlasim/carla:0.9.11
+    command: /bin/bash ./CarlaUE4.sh -carla-rpc-port=2000
+    restart: always
+    privileged: true
+    ports:
+    - "2000:2000"
+    environment:
+      - SDL_VIDEODRIVER=x11
+      - DISPLAY=:0.0
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    runtime: nvidia
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+    # network_mode: host
+    networks:
+      - testnet

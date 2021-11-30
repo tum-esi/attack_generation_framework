@@ -1,0 +1,4 @@
+{
+	"http_port": 8030,
+	"http_address": "0.0.0.0"
+}
