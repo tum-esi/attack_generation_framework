@@ -3,6 +3,8 @@
 - `npm i -D @sveltejs/adapter-static@next`
 - `npm i -D axios`
 - `npm i -D svelte-json-tree`
+- `npm i -D axios`
+
 
 # create-svelte
 

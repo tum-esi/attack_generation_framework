@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/w3.css"> 
+
+		<title>Docs</title>
+
+		
+
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-0566876a.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/docs.svelte-fa4258b7.css">
+
+		
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header><div class="w3-bar w3-blue"><a href="/" class="w3-bar-item w3-button svelte-1xp7w9o">Home</a>
+<a href="/containers" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Database</a>
+<a sveltekit:prefetch href="/recovery" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Recovery</a>
+<a href="/docs" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o active">Docs</a>
+
+<button class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">☰</button></div>
+
+	<div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium"><a href="/" class="w3-bar-item w3-button svelte-1xp7w9o">Home</a>
+<a href="/containers" class="w3-bar-item w3-button svelte-1xp7w9o">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button svelte-1xp7w9o">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button svelte-1xp7w9o">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button svelte-1xp7w9o">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button svelte-1xp7w9o">Database</a>
+<a sveltekit:prefetch href="/recovery" class="w3-bar-item w3-button svelte-1xp7w9o">Recovery</a>
+<a href="/docs" class="w3-bar-item w3-button svelte-1xp7w9o active">Docs</a>
+</div>
+</header>
+
+<main class="svelte-1izrdc8">
+
+<div class="content svelte-cf77e8"><h3>How to build a container testbed network?</h3>
+	<ul><li>Create a docker network and connect all containers to this network (this allows containers to discover each other)</li>
+<li>If persistent storage is in use, make sure to map volumes to folders specified in /persistent/example_app because /persistent has volume mappings to the local computer folder ./persistent</li>
+<li>(keep in mind) </li></ul>
+
+	<h3>Containers Page</h3>
+	<ul><li>When starting a new container, make sure to specify ports as follows: (1) 8199-8299:8200 for ranges e.g. as with attack-generator, (2) 8300:8300,5900:5900,6080:80 for multiple mappings e.g. as with receiver.</li></ul>
+
+	<h3>Configuration Page</h3>
+	<ul><li>Add new protocols and attacks (option to select source IP of containers for spoofing, random choice of source ip, etc.).</li></ul>
+</div></main>
+
+<footer class="svelte-1izrdc8"><p>Contact <a href="https://kit.svelte.dev" class="svelte-1izrdc8">Jan Lauinger</a> if you have Questions.</p>
+</footer>
+
+
+
+	
+</div>
+	</body>
+</html>

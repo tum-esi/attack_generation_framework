@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/tum.svg" type="image/svg+xml" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/w3.css"> 
+
+		<title>Simulation</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-ab74c6af.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-915ebf8f.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-2694f420.js">
+		<link rel="modulepreload" href="/./_app/pages/simulation/index.svelte-91add9eb.js">
+		<link rel="modulepreload" href="/./_app/chunks/index-8269989f.js">
+		<link rel="modulepreload" href="/./_app/chunks/requests-e85df469.js">
+		<link rel="modulepreload" href="/./_app/chunks/store-233430ee.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-ed367ab7.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/simulation/index.svelte-751cdf08.css">
+		<link rel="stylesheet" href="/./_app/assets/index.svelte_svelte&type=style&lang-48395a32.css">
+		<link rel="stylesheet" href="/./_app/assets/requests-0b859297.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-ab74c6af.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-2694f420.js"),
+						import("/./_app/pages/simulation/index.svelte-91add9eb.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/simulation",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header><div class="w3-bar w3-blue"><a href="/" class="w3-bar-item w3-button w3-mobile svelte-1rh8rks" style="width:16.6%">Home</a>
+<a href="/containers" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks active" style="width:16.6%">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Database</a>
+<button class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">☰</button></div>
+
+	<div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium"><a href="/" class="w3-bar-item w3-button svelte-1rh8rks">Home</a>
+<a href="/containers" class="w3-bar-item w3-button svelte-1rh8rks">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button svelte-1rh8rks">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button svelte-1rh8rks active">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button svelte-1rh8rks">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button svelte-1rh8rks">Database</a></div>
+</header>
+
+<main class="svelte-1izrdc8">
+
+<div class="notifications svelte-rlsdwl">
+</div>
+
+
+
+
+<div id="myModal" class="modal svelte-rk4oiy"><span class="close svelte-rk4oiy">×</span>
+	<img class="modal-content svelte-rk4oiy" id="img01" src="">
+	<div id="caption" class="svelte-rk4oiy"></div>
+</div>
+
+<hr class="svelte-drd2kv">
+<div class="w3-panel w3-blue"><h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444"><b>Simulation</b></h1></div>
+<hr class="svelte-drd2kv">
+
+<h4>Scenario: Please create and select a scenario before starting the simulation. Number of Containers: 0.</h4>
+
+	<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border">Start Simulation</button></div>
+<div class="w3-third"><button class="w3-col w3-input w3-border">Stop Simulation</button></div>
+<div class="w3-third"><button class="w3-col w3-input w3-border">Reset WS Connection</button></div></div>
+
+	<hr class="svelte-drd2kv">
+
+	<section class="page-headline"><h3>Application Logs</h3></section>
+
+	<button class="w3-col w3-input w3-border w3-button">Clear Logs</button>
+
+	
+
+	<br>
+	<hr class="svelte-drd2kv">
+
+
+
+
+
+
+
+<hr class="svelte-drd2kv">
+
+</main>
+
+<footer class="svelte-1izrdc8"><p>Contact <a href="mailto:jan.lauinger@tum.de?subject=toolkit&body=Question" class="svelte-1izrdc8">jan.lauinger@tum.de</a> if you have Questions.</p>
+</footer>
+
+
+
+	
+</div>
+	</body>
+</html>

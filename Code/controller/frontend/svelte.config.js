@@ -1,6 +1,7 @@
 /** @type {import('@sveltejs/kit').Config} */
 
 import adapter from '@sveltejs/adapter-static';
+import { imagetools } from 'vite-imagetools';
 
 const config = {
 	kit: {
@@ -11,7 +12,10 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null
-		})
+		}),
+		vite: {
+			plugins: [imagetools({ force: true })],
+		}
 		// paths: {
 		// 	assets: 'assets',
 		// 	base: ''

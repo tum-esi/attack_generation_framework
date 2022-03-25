@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/tum.svg" type="image/svg+xml" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/w3.css"> 
+
+		
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-ab74c6af.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-915ebf8f.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-2694f420.js">
+		<link rel="modulepreload" href="/./_app/pages/recovery/index.svelte-c0e6fde8.js">
+		<link rel="modulepreload" href="/./_app/chunks/requests-e85df469.js">
+		<link rel="modulepreload" href="/./_app/chunks/index-8269989f.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-ed367ab7.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/recovery/index.svelte-f7655e37.css">
+		<link rel="stylesheet" href="/./_app/assets/index.svelte_svelte&type=style&lang-48395a32.css">
+		<link rel="stylesheet" href="/./_app/assets/requests-0b859297.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-ab74c6af.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-2694f420.js"),
+						import("/./_app/pages/recovery/index.svelte-c0e6fde8.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/recovery",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header><div class="w3-bar w3-blue"><a href="/" class="w3-bar-item w3-button w3-mobile svelte-1rh8rks" style="width:16.6%">Home</a>
+<a href="/containers" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Database</a>
+<button class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">☰</button></div>
+
+	<div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium"><a href="/" class="w3-bar-item w3-button svelte-1rh8rks">Home</a>
+<a href="/containers" class="w3-bar-item w3-button svelte-1rh8rks">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button svelte-1rh8rks">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button svelte-1rh8rks">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button svelte-1rh8rks">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button svelte-1rh8rks">Database</a></div>
+</header>
+
+<main class="svelte-1izrdc8">
+
+
+
+
+<div class="notifications svelte-rlsdwl">
+</div>
+
+<hr class="svelte-t4qhpe">
+<div class="w3-panel w3-blue"><h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444"><b>Recovery Handlers</b></h1></div>
+<hr class="svelte-t4qhpe">
+
+
+<h2>Upload Checkpoint</h2>
+<form class="w3-container w3-card-4" enctype="multipart/form-data">
+	<p><label><b>Image Repository-Version (e.g. ubuntu:latest, ubuntu:16.04)</b></label>
+<input class="w3-input w3-border" name="repo_version" type="text"></p>
+	<p><label><b>Container Name</b></label>
+<input class="w3-input w3-border" name="containername" type="text"></p>
+	<p><label><b>Container Ports (8080:8080,443:443)</b></label>
+<input class="w3-input w3-border" name="containerports" type="text"></p>
+	<p><label><b>Container Networks</b></label>
+<input class="w3-input w3-border" name="containernetworks" type="text"></p>
+	<p><label><b>Container Volumes</b></label>
+<input class="w3-input w3-border" name="containervolumes" type="text"></p>
+	<p><label><b>Container Privileged (yes, no)</b></label>
+<input class="w3-input w3-border" name="containerprivilege" type="text"></p>
+	<p><label class="w3-text-blue"><b>File</b></label>
+	    <input class="w3-input w3-border" type="file" name="file"></p>
+    <p><input class="w3-col w3-input w3-border w3-margin-bottom" name="submitbtn" type="submit" value="upload"></p></form>
+
+<hr class="svelte-t4qhpe">
+<div class="w3-panel w3-blue"><h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444"><b>Monitoring</b></h1></div>
+<hr class="svelte-t4qhpe">
+
+<br>
+<button class="w3-col w3-input w3-border w3-margin-bottom">Reload all Tables</button>
+
+<section class="page-headline"><h3>Available Checkpoints</h3></section>
+
+
+
+<br>
+
+<section class="page-headline"><h3>Checkpoint Configurations</h3></section>
+
+
+
+<br>
+
+<section class="page-headline"><h3>Snapshot Backups</h3></section>
+
+
+
+<br>
+
+<section class="page-headline"><h3>Running Containers</h3></section>
+
+
+
+<br>
+
+<section class="page-headline"><h3>Images</h3></section>
+
+
+
+<br>
+
+
+
+<hr class="svelte-t4qhpe">
+<div class="w3-panel w3-blue"><h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444"><b>Recovery Actions</b></h1></div>
+<hr class="svelte-t4qhpe">
+
+
+<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border w3-button">Snapshot Container ( create image )</button></div>
+    <div class="w3-third"><input id="snapshotContainer" class="w3-input w3-border" name="containername" type="text" placeholder="Container Name"></div>
+    <div class="w3-rest"><input id="snapshotImageTag" class="w3-input w3-border" name="imagetag" type="text" placeholder="Image Tag (e.g. myimage-01)"></div></div>
+
+<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border w3-button">Export Snapshot ( image to .tar )</button></div>
+    <div class="w3-third"><input id="exportSnapshot" class="w3-input w3-border" name="imagetag" type="text" placeholder="Image Tag (e.g. myimage-01)"></div>
+    <div class="w3-rest"><input id="exportSnapshotTar" class="w3-input w3-border" name="tarname" type="text" placeholder=".tar Filename"></div></div>
+
+
+<div class="w3-row w3-section"><div class="w3-half"><button class="w3-col w3-input w3-border w3-button">Import Snapshot ( .tar to image )</button></div>
+    <div class="w3-half"><input id="importSnapshotTar" class="w3-input w3-border" name="tarname" type="text" placeholder=".tar Filename">
+    	</div>
+    </div>
+
+<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border w3-button">Backup Snapshot ( .tar to gridfs )</button></div>
+    <div class="w3-rest"><input id="backupSnapshot" class="w3-input w3-border" name="tarname" type="text" placeholder=".tar Filename"></div></div>
+
+<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border w3-button">Download Snapshot Backup ( as .tar )</button></div>
+    <div class="w3-rest"><input id="downloadSnapshotTar" class="w3-input w3-border" name="snapshotname" type="text" placeholder="Snapshot Name"></div></div>
+
+
+<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border w3-button">Download Checkpoint/Snapshot ( as .tar )</button></div>
+    <div class="w3-rest"><input id="downloadCheckpointTar" class="w3-input w3-border" name="checkpointname" type="text" placeholder="Checkpoint Name"></div></div>
+
+<div class="w3-row w3-section"><div class="w3-half"><button class="w3-col w3-input w3-border w3-button">Recover Container ( load from .tar )</button></div>
+    
+    <div class="w3-half"><input id="recoverContainerTar" class="w3-input w3-border" name="checkpointname" type="text" placeholder="Checkpoint Name (.tar filename)"></div></div>
+
+
+<hr class="svelte-t4qhpe">
+<div class="w3-panel w3-blue"><h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444"><b>Log Files</b></h1></div>
+<hr class="svelte-t4qhpe">
+
+<form class="w3-container w3-card-4" enctype="multipart/form-data">
+	<p><label class="w3-text-blue"><b>.csv File</b></label>
+	    <input class="w3-input w3-border" type="file" name="file"></p>
+    <p><input class="w3-col w3-input w3-border w3-margin-bottom" type="submit" value="upload"></p></form>
+<br>
+
+<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border w3-button">Delete Logfile</button></div>
+    <div class="w3-rest"><input id="deleteLogfileInput" class="w3-input w3-border" name="logfileid" type="text" placeholder="Logfile ID"></div></div>
+
+<div class="w3-row w3-section"><div class="w3-third"><button class="w3-col w3-input w3-border w3-button">Download Logfile</button></div>
+    <div class="w3-rest"><input id="downloadLogfile" class="w3-input w3-border" name="logfileid" type="text" placeholder="Logfile ID"></div></div>
+
+<br>
+
+<section class="page-headline"><h3>Available Logfiles</h3></section>
+
+
+
+<hr class="svelte-t4qhpe">
+<div class="w3-panel w3-blue"><h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444"><b>Data Recovery</b></h1></div>
+<hr class="svelte-t4qhpe">
+
+<br>
+<button class="w3-col w3-input w3-border w3-margin-bottom">Reload Recovery Table</button>
+
+<br>
+
+
+
+<br>
+<br>
+
+<textarea id="jsonSampleId" class="textarea w3-input w3-border svelte-t4qhpe" placeholder="JSON Data" type="text">[object Object]</textarea>
+<button class="w3-col w3-input w3-border w3-button">Prettify</button>
+<br>
+
+<div class="w3-row w3-section"><button class="w3-col w3-input w3-border w3-button">Create Data</button>
+    <textarea id="createDataArea" class="regular textarea w3-input w3-border svelte-t4qhpe" placeholder="JSON Data" type="text">{}</textarea></div>
+
+<div class="w3-row w3-section"><button class="w3-col w3-input w3-border w3-button">Update Data</button>
+    <input id="updateDataId" class="w3-input w3-border" name="logfileid" type="text" placeholder="Object Identifier">
+    <textarea id="updateDataArea" class="regular textarea w3-input w3-border svelte-t4qhpe" placeholder="JSON Data" type="text">{}</textarea></div>
+
+<div class="w3-row w3-section"><button class="w3-col w3-input w3-border w3-button">Delete Data</button>
+    <input id="deleteDataId" class="w3-input w3-border" name="logfileid" type="text" placeholder="Object Identifier">
+</div></main>
+
+<footer class="svelte-1izrdc8"><p>Contact <a href="mailto:jan.lauinger@tum.de?subject=toolkit&body=Question" class="svelte-1izrdc8">jan.lauinger@tum.de</a> if you have Questions.</p>
+</footer>
+
+
+
+	
+</div>
+	</body>
+</html>

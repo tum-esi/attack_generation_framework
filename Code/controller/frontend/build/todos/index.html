@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/w3.css"> 
+
+		<title>Todos</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-8e1329fa.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-ac6a5f58.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-82fddc3f.js">
+		<link rel="modulepreload" href="/./_app/pages/todos/index.svelte-2dfd86e5.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-0566876a.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/todos/index.svelte-ef0435f2.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-8e1329fa.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-82fddc3f.js"),
+						import("/./_app/pages/todos/index.svelte-2dfd86e5.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/todos",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header><div class="w3-bar w3-blue"><a href="/" class="w3-bar-item w3-button svelte-1xp7w9o">Home</a>
+<a href="/containers" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Simulation</a>
+<a href="/database" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Database</a>
+<a href="/analyzers" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Analyzers</a>
+<a href="/response" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Response</a>
+<a href="/recovery" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Recovery</a>
+<a href="/docs" class="w3-bar-item w3-button w3-hide-small svelte-1xp7w9o">Docs</a>
+<button class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">☰</button></div>
+
+	<div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium"><a href="/" class="w3-bar-item w3-button svelte-1xp7w9o">Home</a>
+<a href="/containers" class="w3-bar-item w3-button svelte-1xp7w9o">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button svelte-1xp7w9o">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button svelte-1xp7w9o">Simulation</a>
+<a href="/database" class="w3-bar-item w3-button svelte-1xp7w9o">Database</a>
+<a href="/analyzers" class="w3-bar-item w3-button svelte-1xp7w9o">Analyzers</a>
+<a href="/response" class="w3-bar-item w3-button svelte-1xp7w9o">Response</a>
+<a href="/recovery" class="w3-bar-item w3-button svelte-1xp7w9o">Recovery</a>
+<a href="/docs" class="w3-bar-item w3-button svelte-1xp7w9o">Docs</a></div>
+</header>
+
+<main class="svelte-1izrdc8">
+
+<div class="todos svelte-dmxqmd"><h1>Todos</h1>
+
+	<form class="new svelte-dmxqmd" action="/todos.json" method="post"><input name="text" aria-label="Add todo" placeholder="+ tap to add a todo" class="svelte-dmxqmd"></form>
+
+	
+</div></main>
+
+<footer class="svelte-1izrdc8"><p>Contact <a href="https://kit.svelte.dev" class="svelte-1izrdc8">Jan Lauinger</a> if you have Questions.</p>
+</footer>
+
+
+
+	<script type="svelte-data" url="/todos.json">{"status":200,"statusText":"","headers":{"content-type":"application/json"},"body":"[]"}</script>
+</div>
+	</body>
+</html>

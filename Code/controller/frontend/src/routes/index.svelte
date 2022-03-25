@@ -3,22 +3,22 @@
 </script>
 
 <script>
-	// import Counter from '$lib/Counter/index.svelte';
+	import logo from '$lib/assets/fig1-fixed.png';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>ADGF</title>
 </svelte:head>
 
 <section>
-	<h1>
-		IoV TestBed for Data Generation
-	</h1>
 
-	<h4>TODOs</h4>
-	<ul>
-		<li>Static configuration: add data folder path option</li>
-	</ul>
+	<div class="w3-container w3-padding-64 w3-grayscale-min" id="us">
+		<div class="w3-content w3-center">
+			<h1 class="w3-center w3-text-grey"><b>Paper: Attack Data Generation Framework for Autonomous Vehicle Sensors</b></h1>
+			<img src={logo} style="width:60%;margin:32px 0" /> <!-- width="800px" height="2100px" -->
+			
+		</div>
+	</div>
 	
 	<!-- <Counter /> -->
 </section>

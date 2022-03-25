@@ -1,0 +1,1 @@
+import{S as s,i as e,s as t,t as r,g as a,f as n,H as o,d as i}from"../../chunks/vendor-fda5d988.js";function l(s){let e;return{c(){e=r("shared threat intelligence repository")},l(s){e=a(s,"shared threat intelligence repository")},m(s,t){n(s,e,t)},p:o,i:o,o:o,d(s){s&&i(e)}}}export default class extends s{constructor(s){super(),e(this,s,null,l,t,{})}}

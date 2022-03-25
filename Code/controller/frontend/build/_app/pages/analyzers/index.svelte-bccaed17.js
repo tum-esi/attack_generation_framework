@@ -1,0 +1,1 @@
+import{S as s,i as a,s as e,t,g as n,f as o,H as r,d as c}from"../../chunks/vendor-81e37c4c.js";function l(s){let a;return{c(){a=t("analyzers (UniGe data from storage component)")},l(s){a=n(s,"analyzers (UniGe data from storage component)")},m(s,e){o(s,a,e)},p:r,i:r,o:r,d(s){s&&c(a)}}}export default class extends s{constructor(s){super(),a(this,s,null,l,e,{})}}

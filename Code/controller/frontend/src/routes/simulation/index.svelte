@@ -1,5 +1,6 @@
 <script type="text/javascript">
 	import Table from '$lib/Table/index.svelte';
+	import AutoPilot from '$lib/AutoPilot/index.svelte';
 	import { onMount } from 'svelte';
     import Toast from '$lib/Toast.svelte';
     import { notifications } from '$lib/notifications.js';
@@ -53,6 +54,8 @@
 	let drivesimData = [];
 
     onMount(async() => {
+
+    	console.log("scenarios", scenarios, "scenario_configurations", scenario_configurations, "scenario_type", scenario_type)
 
     	let url = "";
     	for (let i = 0; i < scenarios.length; i++) {
@@ -181,23 +184,6 @@
 				console.log("response of simulation", response.data)
 			}
 		})
-	}
-
-	function drivesimSimulation() {
-		let data = {"configs": scenario_configurations}
-		xmlWriteRequest("/simulation/static", "POST", data, function(response) {
-			if (response.data) {
-				notifications.success("simulation started.")
-				console.log("response of simulation", response.data)
-			}
-		})
-	}
-
-	function viewFile() {
-
-	}
-
-	function deleteFile() {
 	}
 
 	function deleteFiles() {
@@ -366,11 +352,9 @@
 
 {#if scenario_type == "Driving Simulation"}
 
-	<div class="w3-row w3-section">
-		<div class="w3-rest">
-			<button on:click={drivesimSimulation} class="w3-col w3-input w3-border">Start Simulation</button>
-		</div>
-	</div>
+	<AutoPilot title={"AutoPilot Component"} bind:input_data={drivesimData} ></AutoPilot>
+
+	<hr>
 
 {/if }
 

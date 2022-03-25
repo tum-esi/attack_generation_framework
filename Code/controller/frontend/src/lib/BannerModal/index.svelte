@@ -1,6 +1,4 @@
 <script type="text/javascript">
-	import { onMount } from 'svelte';
-
 	export let message = "";
 
 	function closeModal() {

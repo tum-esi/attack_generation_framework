@@ -1,0 +1,1 @@
+import{S as s,i as t,s as o,t as e,g as r,f as a,H as n,d as l}from"../../chunks/vendor-88cff2d8.js";function c(s){let t;return{c(){t=e("response toolkit")},l(s){t=r(s,"response toolkit")},m(s,o){a(s,t,o)},p:n,i:n,o:n,d(s){s&&l(t)}}}export default class extends s{constructor(s){super(),t(this,s,null,c,o,{})}}

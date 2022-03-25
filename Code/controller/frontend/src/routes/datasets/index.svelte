@@ -4,15 +4,17 @@
   import { notifications } from '$lib/notifications.js';
   import Table from '$lib/Table/index.svelte';
   import { onMount, onDestroy } from 'svelte';
-  import { scenarioTypeStore, scenarioConfigsStore } from '$lib/store.js';
+  import { scenarioTypeStore, scenarioConfigsStore, drivingData } from '$lib/store.js';
   import BannerModal from '$lib/BannerModal/index.svelte';
 
   let bannerModalComponent;
 
   let scenario_type = "";
   let scenario_configurations = {};
+  let driving_data = [];
   const unsubscribe2 = scenarioConfigsStore.subscribe(value => {scenario_configurations = value;});
   const unsubscribe4 = scenarioTypeStore.subscribe(value => {scenario_type = value;});
+  const unsub3 = drivingData.subscribe(value => {driving_data = value;});
   let gridfsData = [];
   let capfileData = [];
   let editData = [];
@@ -23,9 +25,12 @@
   onDestroy(() => {
     unsubscribe2();
     unsubscribe4();
+    unsub3();
   });
 
   onMount(async() => {
+
+    console.log("driving_data", driving_data)
 
     if (scenario_type == "Communication") {
       reloadGridfs()
@@ -540,7 +545,6 @@
         </table>
       </div>
     </div>
-
   {/if }
 
   <div class="w3-row w3-section">
@@ -555,26 +559,69 @@
     </div>
   </div>
 
+  <hr>
+
+  <div class="w3-panel w3-blue">
+    <h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444">
+      <b>Detection Statistics</b>
+    </h1>
+  </div>
+
+  <div class="w3-container">
+    <h2>Evaluation Parameters</h2>
+    <!-- <p>test</p> -->
+
+    <div class="w3-display-container w3-text-white">
+      <img id="statsChartPic" src="https://via.placeholder.com/468x60?text=Evaluation+Matplotlib+Chart+Results" alt="stats" style="width:100%">
+    </div>
+
+  </div>
+  <hr>
+
 {/if }
 
-<hr>
+{#if scenario_type == "Driving Simulation"}
 
-<div class="w3-panel w3-blue">
-  <h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444">
-    <b>Detection Statistics</b>
-  </h1>
-</div>
-
-<div class="w3-container">
-  <h2>Evaluation Parameters</h2>
-  <!-- <p>test</p> -->
-
-  <div class="w3-display-container w3-text-white">
-    <img id="statsChartPic" src="https://via.placeholder.com/468x60?text=Evaluation+Matplotlib+Chart+Results" alt="stats" style="width:100%">
+  <div class="w3-panel w3-blue">
+    <h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444">
+      <b>AutoPilot Simulation</b>
+    </h1>
   </div>
 
+  <br>
+
+  <div class="w3-row w3-section">
+    <div class="w3-rest">
+      <button class="w3-col w3-input w3-border" on:click={tableToCsv}>Download Data as CSV</button>
+    </div>
   </div>
-<hr>
+
+  <hr>
+
+  {#if driving_data.length > 0}
+    <div class="w3-container">
+      <div class="w3-responsive">
+        <table class="w3-table-all" style="width:100%">
+          <thead>
+            <tr class="w3-dark-grey">
+              {#each Object.keys(driving_data[0]) as header, i}
+                <th>{ header }</th>
+              {/each }
+            </tr>
+          </thead>
+          {#each driving_data as obj, i}
+            <tr>
+              {#each Object.keys(driving_data[0]) as header, i }
+                <td>{obj[header]}</td>
+              {/each }
+            </tr>
+          {/each }
+        </table>
+      </div>
+    </div>
+  {/if }
+
+{/if }
 
 <style>
 	hr {

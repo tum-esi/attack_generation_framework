@@ -1,14 +1,25 @@
 # Attack Data Generation Framework for AutonomousVehicle Sensors
 
+## frontend UI
+
+<object data="./ADGF.pdf" type="application/pdf" width="100%">
+    <embed src="./ADGF.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="./ADGF.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
 ## how to run the code in a container environment
 
-- start the deployment by using the command `docker-compose up` in the root directory of this repository.
+- start the deployment by using the command `docker pull carlasim/carla:0.9.12` in the root directory of this repository.
 - move to `localhost:8000`.
 
 ## how to run the code for local development
 
-- jump into the controller folder and run `python3 main.py`.
+- pull carla 0.9.11: `docker pull carlasim/carla:0.9.11`
+- jump into Code folder and start database with compose `docker pull carlasim/carla:0.9.12`
+
 - jump into the repositories/data-generator folder and run `python3 main.py --config attack_config.json`, `python3 main.py --config config.json` and go into repositories/data-receiver and execute `sudo python3 main.py --config config.json`.
+- jump into the controller folder and run `python3 main.py`.
 - move to `localhost:8000`.
 
 ## sample configuration for the static dataset scenario

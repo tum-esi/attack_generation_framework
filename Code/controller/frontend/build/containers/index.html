@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/tum.svg" type="image/svg+xml" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/w3.css"> 
+
+		<title>Containers</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-ab74c6af.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-915ebf8f.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-2694f420.js">
+		<link rel="modulepreload" href="/./_app/pages/containers/index.svelte-be5452d4.js">
+		<link rel="modulepreload" href="/./_app/chunks/index-8269989f.js">
+		<link rel="modulepreload" href="/./_app/chunks/requests-e85df469.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-ed367ab7.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/containers/index.svelte-bb96b678.css">
+		<link rel="stylesheet" href="/./_app/assets/index.svelte_svelte&type=style&lang-48395a32.css">
+		<link rel="stylesheet" href="/./_app/assets/requests-0b859297.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-ab74c6af.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-2694f420.js"),
+						import("/./_app/pages/containers/index.svelte-be5452d4.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/containers",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<header><div class="w3-bar w3-blue"><a href="/" class="w3-bar-item w3-button w3-mobile svelte-1rh8rks" style="width:16.6%">Home</a>
+<a href="/containers" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks active" style="width:16.6%">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button w3-hide-small w3-mobile svelte-1rh8rks" style="width:16.6%">Database</a>
+<button class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium">☰</button></div>
+
+	<div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium"><a href="/" class="w3-bar-item w3-button svelte-1rh8rks">Home</a>
+<a href="/containers" class="w3-bar-item w3-button svelte-1rh8rks active">Containers</a>
+<a href="/configuration" class="w3-bar-item w3-button svelte-1rh8rks">Configuration</a>
+<a href="/simulation" class="w3-bar-item w3-button svelte-1rh8rks">Simulation</a>
+<a href="/datasets" class="w3-bar-item w3-button svelte-1rh8rks">Datasets</a>
+<a href="/database" class="w3-bar-item w3-button svelte-1rh8rks">Database</a></div>
+</header>
+
+<main class="svelte-1izrdc8">
+
+
+<hr class="svelte-1bkk48p">
+<div class="w3-panel w3-blue"><h1 class="w3-text-yellow" style="text-shadow:1px 1px 0 #444"><b>TestNet Container Management</b></h1></div>
+<hr class="svelte-1bkk48p">
+
+<section class="w3-container"><button class="w3-col w3-input w3-border w3-margin-bottom">Update Tables</button>
+	
+	<hr class="svelte-1bkk48p">
+
+	<button class="w3-button w3-block w3-black w3-left-align w3-margin-bottom">Images</button>
+	<div id="imagesAccordion" class="w3-hide w3-margin-bottom"><div class="w3-container">
+	<div class="w3-responsive"><table class="w3-table-all svelte-1l2l3xx" style="width:100%"><thead><tr class="w3-dark-grey"><th class="svelte-1l2l3xx">short_id</th><th class="svelte-1l2l3xx">tag</th></tr></thead>
+		</table></div>
+</div></div>
+	<div class="w3-row w3-section"><div class="w3-half"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="createImage" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Create Image</h2>
+		<p><label class="w3-text-black"><b>Repository to Build</b></label>
+						<select class="w3-select w3-border" name="repo"><option value="" disabled selected>Select Repository to Build</option></select>
+				</p><p><label class="w3-text-black"><b>Tag Name</b></label>
+						<input class="w3-input w3-border" name="tag" type="text">
+				</p><p><label class="w3-text-black"><b>Version (e.g. latest or 0.2)</b></label>
+						<input class="w3-input w3-border" name="version" type="text">
+				</p>
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Create Image</button></div>
+    	<div class="w3-half"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="deleteImage" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Delete Image</h2>
+		
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Delete Image</button></div></div>
+
+
+	
+	<hr class="svelte-1bkk48p">
+	<button class="w3-button w3-block w3-black w3-left-align w3-margin-bottom">Containers</button>
+	<div id="containersAccordion" class="w3-hide w3-margin-bottom"><div class="w3-container">
+	<div class="w3-responsive"><table class="w3-table-all svelte-1l2l3xx" style="width:100%"><thead><tr class="w3-dark-grey"><th class="svelte-1l2l3xx">short_id</th><th class="svelte-1l2l3xx">name</th><th class="svelte-1l2l3xx">ports</th></tr></thead>
+		</table></div>
+</div></div>
+	<div class="w3-row w3-section"><div class="w3-third"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="startContainer" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Start Container</h2>
+		<p><label class="w3-text-black"><b>Join Network</b></label>
+						<select class="w3-select w3-border" name="network"><option value="" disabled selected>Select Join Network</option></select>
+				</p><p><label class="w3-text-black"><b>Select Image</b></label>
+						<select class="w3-select w3-border" name="image"><option value="" disabled selected>Select Select Image</option></select>
+				</p><p><label class="w3-text-black"><b>Attach Volumes (e.g. vol_name:/path/to/container_folder, if using multiple -&gt; use comma separated)</b></label>
+						<input class="w3-input w3-border" name="volumes" type="text">
+				</p><p><label class="w3-text-black"><b>Port Mapping (please use format e.g. 80:80 or 443:443 or 8080:8080, if using multiple 80:80,443:443,...)</b></label>
+						<input class="w3-input w3-border" name="ports" type="text">
+				</p><p><label class="w3-text-black"><b>Name</b></label>
+						<input class="w3-input w3-border" name="name" type="text">
+				</p><p><input class="w3-check" type="checkbox" checked="" name="privileged"> 
+						<label class="w3-text-black"><b>Privileged</b></label>
+				</p>
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Start Container</button></div>
+    	<div class="w3-third"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="startstopContainer" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Start/Stop</h2>
+		
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Start/Stop</button></div>
+    	<div class="w3-third"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="deleteContainer" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Delete Container</h2>
+		
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Delete Container</button></div></div>
+
+
+	
+	<hr class="svelte-1bkk48p">
+	<button class="w3-button w3-block w3-black w3-left-align w3-margin-bottom">Networks</button>
+	<div id="networksAccordion" class="w3-hide w3-margin-bottom"><div class="w3-container">
+	<div class="w3-responsive"><table class="w3-table-all svelte-1l2l3xx" style="width:100%"><thead><tr class="w3-dark-grey"><th class="svelte-1l2l3xx">short_id</th><th class="svelte-1l2l3xx">name</th></tr></thead>
+		</table></div>
+</div></div>
+	<div class="w3-row w3-section"><div class="w3-half"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="createNetwork" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Create Network</h2>
+		
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Create Network</button></div>
+    	<div class="w3-half"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="deleteNetwork" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Delete Network</h2>
+		
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Delete Network</button></div></div>
+
+
+	
+	<hr class="svelte-1bkk48p">
+	<button class="w3-button w3-block w3-black w3-left-align w3-margin-bottom">Volumes</button>
+	<div id="volumesAccordion" class="w3-hide w3-margin-bottom"><div class="w3-container">
+	<div class="w3-responsive"><table class="w3-table-all svelte-1l2l3xx" style="width:100%"><thead><tr class="w3-dark-grey"><th class="svelte-1l2l3xx">short_id</th><th class="svelte-1l2l3xx">name</th></tr></thead>
+		</table></div>
+</div></div>
+	<div class="w3-row w3-section"><div class="w3-half"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="createVolume" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Create Volume</h2>
+		
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Create Volume</button></div>
+    	<div class="w3-half"><div class="notifications svelte-rlsdwl">
+</div>
+
+
+<div id="deleteVolume" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span class="w3-button w3-display-topright">×</span>
+
+	<form class="w3-container"><h2 class="w3-text-black">Delete Volume</h2>
+		
+		<p><input class="w3-blue" type="submit" value="execute">
+			</p></form></div></div></div>
+
+<button class="w3-col w3-input w3-border">Delete Volume</button></div></div>
+
+
+	
+	<hr class="svelte-1bkk48p">
+	<button class="w3-button w3-block w3-black w3-left-align w3-margin-bottom">Repositories</button>
+	<div id="repositoriesAccordion" class="w3-hide w3-margin-bottom"><div class="w3-container">
+	<div class="w3-responsive"><table class="w3-table-all svelte-1l2l3xx" style="width:100%"><thead><tr class="w3-dark-grey"><th class="svelte-1l2l3xx">name</th></tr></thead>
+		</table></div>
+</div></div>
+
+	<div class="w3-margin w3-padding"></div>
+
+</section></main>
+
+<footer class="svelte-1izrdc8"><p>Contact <a href="mailto:jan.lauinger@tum.de?subject=toolkit&body=Question" class="svelte-1izrdc8">jan.lauinger@tum.de</a> if you have Questions.</p>
+</footer>
+
+
+
+	
+</div>
+	</body>
+</html>

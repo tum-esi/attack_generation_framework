@@ -9,7 +9,7 @@
 
     let scenarios = [];
     let scenario_configurations = {};
-    let testing = false;
+    let testing = true;
     let scenario_type = "Communication";
     const unsubscribe = scenarioStore.subscribe(value => {scenarios = value;});
     const unsubscribe2 = scenarioConfigsStore.subscribe(value => {scenario_configurations = value;});
@@ -139,6 +139,26 @@
         });
     }
 
+    function readDriveConfigs() {
+        let configs = {};
+        configs["driving_time"] = parseInt(document.getElementById("driving_time").value);
+        configs["driving_attack_time"] = parseInt(document.getElementById("driving_attack_time").value);
+        let driveConfigs = document.getElementById("driving_path").getElementsByTagName('label');
+        let driveAttacks = document.getElementById("driving_attacks").getElementsByTagName('label');
+
+        for (var i = 0; i < driveConfigs.length; i++) {
+            if (driveConfigs.item(i).firstElementChild.checked) {
+                configs["driving_path"] = driveConfigs.item(i).innerText;
+            }
+        }
+        for (var i = 0; i < driveAttacks.length; i++) {
+            if (driveAttacks.item(i).firstElementChild.checked) {
+                configs["driving_attacks"] = driveAttacks.item(i).innerText;
+            }
+        }
+        return configs;
+    }
+
     function readStaticConfigs() {
         let configs = {};
         let datasets = document.getElementById("static_datasets").childNodes;
@@ -200,12 +220,30 @@
             if (scenario_configurations["type"] == scenario_type && "_id" in scenario_configurations) {
                 scenario_configurations["configurations"] = [data];
             } else {
-
                 // new scenario configuration
                 scenario_configurations = {"name": scenarios[selected_scenario]["name"], "ref": scenarios[selected_scenario]["_id"]}
                 scenario_configurations["configurations"] = [data];
             }
         }
+
+        // handling driving simulation
+        if (scenario_type == "Driving Simulation") {
+            let data = readDriveConfigs();
+            if (isNaN(data["driving_time"]) || isNaN(data["driving_attack_time"])) {
+                notifications.danger("Please provide autopilot duration and time to launch an attack");
+                return
+            }
+            // check if scenario already loaded
+            if (scenario_configurations["type"] == scenario_type && "_id" in scenario_configurations) {
+                scenario_configurations["configurations"] = [data];
+            } else {
+                // new scenario configuration
+                scenario_configurations = {"name": scenarios[selected_scenario]["name"], "ref": scenarios[selected_scenario]["_id"]}
+                scenario_configurations["configurations"] = [data];
+            }
+        }
+
+        console.log("saving scenario_configurations", scenario_configurations)
 
         scenario_configurations["type"] = scenario_type;
         xmlWriteRequest(url, method, scenario_configurations, function(res) {
@@ -367,7 +405,8 @@
                         }
 
                         if (scenario_configurations["type"] == "Driving Simulation") {
-
+                            // fill up data
+                            setDriving();
                         }
                     }
                 }
@@ -375,12 +414,38 @@
         });
     }
 
+    function setDriving() {
+
+        document.getElementById("driving_time").value = scenario_configurations["configurations"][0]["driving_time"].toString();
+        document.getElementById("driving_attack_time").value = scenario_configurations["configurations"][0]["driving_attack_time"].toString();
+
+        let driving_path = document.getElementById("driving_path").getElementsByTagName('label');
+        let driving_attacks = document.getElementById("driving_attacks").getElementsByTagName('label');
+
+        for (var i = 0; i < driving_path.length; i++) {
+            if (driving_path.item(i).innerText == scenario_configurations["configurations"][0]["driving_path"]) {
+                driving_path.item(i).firstElementChild.checked = true;
+            } else {
+                driving_path.item(i).firstElementChild.checked = false;
+            }
+        }
+
+        for (var i = 0; i < driving_attacks.length; i++) {
+            if (driving_attacks.item(i).innerText == scenario_configurations["configurations"][0]["driving_attacks"]) {
+                driving_attacks.item(i).firstElementChild.checked = true;
+            } else {
+                driving_attacks.item(i).firstElementChild.checked = false;
+            }
+        }
+
+    }
+
     function setStatic() {
         let datasets = document.getElementById("static_datasets").childNodes;
         let attacks = document.getElementById("static_attacks").getElementsByTagName('label');
         let validate = document.getElementById("static_validation").getElementsByTagName('input');
 
-        console.log("nooowo:", scenario_configurations);
+        // console.log("nooowo:", scenario_configurations);
 
         for (var i = 0; i < datasets.length; i++) {
             if (datasets[i].hasChildNodes()) {
@@ -891,16 +956,41 @@
 
         <section class="page-headline">
             <h3><b>Select Driving Path</b></h3>
+            <div class="w3-container" id="driving_path">
+                <label class="container">testrun
+                    <input type="radio" checked="checked" name="driveradio">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">zickzack
+                    <input type="radio" checked="checked" name="driveradio">
+                    <span class="checkmark"></span>
+                </label>
+
+                <input id="driving_time" class="w3-input w3-border" name="durationAutoPilot" type="text" placeholder="Duration of Autopilot in X seconds">
+            </div>
         </section>
 
         <hr>
         <section class="page-headline">
             <h3><b>Select Sensors</b></h3>
+            <h5>All selected</h5>
         </section>
 
         <hr>
         <section class="page-headline">
             <h3><b>Attack Configuration</b></h3>
+            <div class="w3-container" id="driving_attacks">
+                <label class="container">No Attack
+                    <input type="radio" checked="checked" name="driveradio2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Attack Mode
+                    <input type="radio" checked="checked" name="driveradio2">
+                    <span class="checkmark"></span>
+                </label>
+
+                <input id="driving_attack_time" class="w3-input w3-border" name="driveAttackAfter" type="text" placeholder="Launch attack after X seconds">
+            </div>
         </section>
 
     </div>

@@ -10,7 +10,7 @@
 </main>
 
 <footer>
-	<p>Contact if you have Questions.</p>
+	<p>Contact <a href="mailto:jan.lauinger@tum.de?subject=toolkit&body=Question">jan.lauinger@tum.de</a> if you have Questions.</p>
 </footer>
 
 <style>

@@ -25,3 +25,4 @@ export const scenarioStore = writable([]); // initialScenarios
 export const scenarioConfigsStore = writable({}); // initScenarioConfig
 export const testingStore = readable(true);
 export const scenarioTypeStore = writable("Communication");
+export const drivingData = writable([]);
